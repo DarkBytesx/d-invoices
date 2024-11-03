@@ -1,0 +1,12 @@
+{
+    "title": "Invoices.",
+    "access_invoices": "Access invoices",
+     "bill_created": "Bill has been sent.",
+    "failed_to_create": "Failed to create bill.",
+    "no_identifier": "Could not find player identifier.",
+    "paid": "Bill has been paid.",
+    "failed_to_pay": "Bill was not paid.",
+    "no_money": "You do not have enough money.",
+    "invalid": "Bill is invalid.",
+    "no_permission": "No permission"
+}

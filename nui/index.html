@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="overlay" id="overlay" style="display: none;"></div>
+    <div id="invoice-menu" style="display: none;">
+        <div class="navbar">
+            <h2>Options</h2>
+            <button class="nav-button active" onclick="showSection('dashboard')">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </button>
+            <button class="nav-button" onclick="showSection('your-billings')">
+                <i class="fas fa-file-invoice-dollar"></i> Your Billings
+            </button>
+            <button class="nav-button" onclick="showSection('history')">
+                <i class="fas fa-history"></i> History
+            </button>
+            <button class="nav-button" onclick="closeMenu()">
+                <i class="fas fa-times"></i> Exit invoices
+            </button>
+        </div>
+        
+        <div class="content">
+            <div id="dashboard" class="section" style="display: block;">
+                <h2>Dashboard</h2>
+                
+                <div class="bill-container">
+                    <h3>Total Bills:</h3>
+                    <p id="total-bills">1</p>
+                </div>
+            
+                <div class="bill-container">
+                    <h3>Paid Bills:</h3>
+                    <p id="paid-bills">1</p> 
+                </div>
+            
+                <div class="bill-container">
+                    <h3>Unpaid Bills:</h3>
+                    <p id="unpaid-bills">0</p> 
+                </div>
+            </div>
+
+            <div id="your-billings" class="section">
+                <h2>Your Billings</h2>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                            <th>Organization</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billings-list">
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="history" class="section">
+                <h2>History</h2>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                            <th>Organization</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-list">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="create-bill" class="section">
+                <h2>Create New Bill</h2>
+                <form id="create-bill-form">
+                    <label for="player-id-input">Player ID:</label>
+                    <input type="number" id="player-id-input" name="player-id" required>
+
+                    <label for="amount-input">Amount:</label>
+                    <input type="number" id="amount-input" name="amount" required>
+
+                    <label for="reason-input">Reason:</label>
+                    <input type="text" id="reason-input" name="reason" required>
+
+                    <label for="comment-input">Comment:</label>
+                    <textarea id="comment-input" name="comment" rows="3"></textarea>
+
+                    <button type="button" onclick="submitBill()">Create Bill</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
