@@ -1,9 +1,9 @@
 Config = {}
 
 Config.AllowedJobs = {
-    "police",
-    "ambulance",
-    "taxi" 
+    { job = "police", society = 'society_police', rank = 0 },
+    { job = "ambulance", society = 'society_ambulance', rank = 0 },
+    { job = "taxi", society = 'society_taxi', rank = 0 }
 }
 
 Config.Banks = {
@@ -11,3 +11,9 @@ Config.Banks = {
     }
     
 Config.makeInvoicesCommand = 'bill'
+
+Config.DiscordWebhook = {
+    Invoices = "",
+}
+
+Config.UseBank = true -- default value true (uses the bank to pay the bill)
